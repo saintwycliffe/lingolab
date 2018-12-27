@@ -1,6 +1,5 @@
 # LingoLab
 ###### Wycliffe at Hack4Missions
-![Urbana Hack4Missions](https://urbana.org/sites/urbana/files/styles/12_banner_940/public/ink4.jpg?itok=dxR0-38D)
 
 ## The Hack
 A web-app dashboard which takes in a user's name and translates or transliterates that name into various languages.
