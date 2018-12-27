@@ -31,4 +31,4 @@ Join us on Slack: [Slack H4M](http://hack4missions.slack.com)
 Enjoy yourselves and share what you're doing on social media using the hashtag #Hack4Wycliffe
 
 ## Hack Well & Have Fun!
-![Hack Now](http://i.imgur.com/5l1MUjk.gif)
+![Hack Now](https://www.docsity.com/wordpress/wp-content/uploads/sites/2/2014/04/hacking.gif)
