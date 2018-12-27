@@ -1,25 +1,20 @@
 # LingoLab
 ###### Wycliffe at Hack4Missions
-======
 [![Urbana Hack4Missions][https://urbana.org/sites/urbana/files/styles/12_banner_940/public/ink4.jpg?itok=dxR0-38D]](https://urbana.org/hack4missions)
-======
 
 ## The Hack
 A web-app dashboard which takes in a user's name and translates or transliterates that name into various languages.
 
 ## Team Leads
-Brent DeHamer, Joe Johnson
-<brent_dehamer@wycliffe.org>, <joe_johnson@wycliffe.org>
+Brent DeHamer at <brent_dehamer@wycliffe.org><br />
+Joe Johnson at <joe_johnson@wycliffe.org>
 
 ## Tools to Begin
-Download the following assets and more from this [link](https://drive.google.com/drive/folders/1aDOAbfse2m25eCojcOAHTNubhH4SLnn7)
-* Design Assets & Wycliffe's Style Guide
-* Wycliffe's Legal Statement
-* Example of Wycliffe's user-info submission form for Pardot
+1. First, Fork this repository to your own github, then clone it to your local machine (if you need help, we can do this together)
+2. Then download what you need from the following assets [linked here](https://drive.google.com/drive/folders/1aDOAbfse2m25eCojcOAHTNubhH4SLnn7)
+3. You will also need a Google Translate API key. Keep your eye on the slack channel 'challenge-lingolab' for the key.
 
-Also, we have a Google Translate API key. Keep your eye on the slack channel 'challenge-lingolab' for the key. 
-
-Join us on Slack: ![Slack H4M](http://hack4missions.slack.com)
+Join us on Slack: [Slack H4M](http://hack4missions.slack.com)
 
 ## Goals to Reach
 1. Appeal visually and follow Wycliffe’s brand style
@@ -37,4 +32,4 @@ Join us on Slack: ![Slack H4M](http://hack4missions.slack.com)
 Enjoy yourselves and share what you're doing on social media using the hashtag #Hack4Wycliffe
 
 ## Hack Well & Have Fun!
-![Hack Now!](https://media.giphy.com/media/LcfBYS8BKhCvK/giphy.gif)
+![Hack Now](https://media.giphy.com/media/LcfBYS8BKhCvK/giphy.gif)
