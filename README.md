@@ -1,6 +1,6 @@
 # LingoLab
 ###### Wycliffe at Hack4Missions
-[![Urbana Hack4Missions][https://urbana.org/sites/urbana/files/styles/12_banner_940/public/ink4.jpg?itok=dxR0-38D]](https://urbana.org/hack4missions)
+![Urbana Hack4Missions](https://urbana.org/sites/urbana/files/styles/12_banner_940/public/ink4.jpg?itok=dxR0-38D)
 
 ## The Hack
 A web-app dashboard which takes in a user's name and translates or transliterates that name into various languages.
@@ -32,4 +32,4 @@ Join us on Slack: [Slack H4M](http://hack4missions.slack.com)
 Enjoy yourselves and share what you're doing on social media using the hashtag #Hack4Wycliffe
 
 ## Hack Well & Have Fun!
-![Hack Now](https://media.giphy.com/media/LcfBYS8BKhCvK/giphy.gif)
+![Hack Now](http://i.imgur.com/5l1MUjk.gif)
