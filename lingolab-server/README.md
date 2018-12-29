@@ -17,3 +17,12 @@ Server currently runs on localhost:8080
 Available API calls:
 - /greeting -> returns a JSON object with "Hello, World!"
 - /greeting?name=MyName -> returns a JSON object with "Hello, MyName!", conforms to input
+- /translate?name=MyName&lang=MyLang -> returns a JSON object of the form:
+{
+  originalName: "MyName"
+  nativeLanguage: "MyLang"
+  translations: [{
+    language: "OtherLang",
+    translation: "TranslatedName"
+  }]
+}
