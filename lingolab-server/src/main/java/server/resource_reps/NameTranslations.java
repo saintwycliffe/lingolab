@@ -9,9 +9,9 @@ public class NameTranslations {
         private final String language;
         private final String translation;
 
-        NameTranslation(String translation, String language) {
-            this.translation = translation;
+        NameTranslation(String language, String translation) {
             this.language = language;
+            this.translation = translation;
         }
 
         public String getLanguage() {
@@ -23,23 +23,23 @@ public class NameTranslations {
         }
     }
 
-    private final String original_name;
-    private final String native_language; // in production, should switch to enum
+    private final String nativeLanguage; // in production, should switch to enum
+    private final String originalName;
     private final List<NameTranslation> translations;
 
-    public NameTranslations(String original_name, String native_language) {
-        this.original_name = original_name;
-        this.native_language = native_language;
+    public NameTranslations(String originalName, String nativeLanguage) {
+        this.nativeLanguage = nativeLanguage;
+        this.originalName = originalName;
         this.translations = new ArrayList<NameTranslation>();
         this.createTranslations();
     }
 
-    public String getOriginalName() {
-        return original_name;
+    public String getNativeLanguage() {
+        return nativeLanguage;
     }
 
-    public String getNativeLanguage() {
-        return native_language;
+    public String getOriginalName() {
+        return originalName;
     }
 
     public List<NameTranslation> getTranslations() {
@@ -47,6 +47,6 @@ public class NameTranslations {
     }
 
     void createTranslations() {
-        this.translations.add(new NameTranslation(original_name, native_language));
+        this.translations.add(new NameTranslation(nativeLanguage, originalName));
     }
 }

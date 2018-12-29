@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class NameTranslationsController {
 
     @RequestMapping("/translate")
-    public NameTranslations translate(@RequestParam(value="name") String name) {
-        return new NameTranslations(name, "language");
+    public NameTranslations translate(@RequestParam(value="name") String name, @RequestParam(value="lang") String lang) {
+        return new NameTranslations(name, lang);
     }
 }
