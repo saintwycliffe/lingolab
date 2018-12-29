@@ -64,5 +64,9 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# webstorm
+# Webstorm
 .idea
+
+# Intellij
+lingolab-server/lingolab.iml
+
