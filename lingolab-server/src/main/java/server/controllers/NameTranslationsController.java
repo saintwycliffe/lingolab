@@ -23,6 +23,10 @@ public class NameTranslationsController {
       System.out.println(e);
     }
     finally {
+<<<<<<< HEAD
+=======
+      this.API_KEY = tempApiKey;
+>>>>>>> Rate limiting to 12, to make it work
       this.translate = (tempTranslate != null) ? tempTranslate : TranslateOptions.newBuilder().build().getService();
     }
   }

@@ -72,11 +72,4 @@ public class NameTranslations {
             .findAny()
             .orElse(null);
     }
-
-    public static Language getLangFromCode(String lang_code, List<Language> supportedLanguages) {
-        return supportedLanguages.stream()
-            .filter(language -> lang_code.equals(language.getCode()))
-            .findAny()
-            .orElse(null);
-    }
 }
