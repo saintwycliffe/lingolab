@@ -28,6 +28,11 @@
             <artifactId>json-path</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>google-cloud-translate</artifactId>
+          <version>1.56.0</version>
+        </dependency>
     </dependencies>
 
     <properties>

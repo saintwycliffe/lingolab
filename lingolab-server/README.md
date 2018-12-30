@@ -7,6 +7,9 @@ To get started, please install:
 JDK: sudo apt install default-jdk
 Maven: sudo apt install maven
 
+Then, add a file named "config.properties" in "lingolab-server/src/main/resources". The file should have one line, which is:
+apikey=YOURAPIKEY
+
 To build, first cd into lingolab-server.
 Then, run: mvn package
 
