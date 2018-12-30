@@ -5,8 +5,7 @@ import java.util.List;
 import com.google.cloud.translate.Language;
 
 public class NameTranslations {
-
-    class NameTranslation {
+    private class NameTranslation {
         private final Language language;
         private final String translation;
 
@@ -24,12 +23,17 @@ public class NameTranslations {
         }
     }
 
-    private final Language nativeLanguage; // in production, should switch to enum
+    private final List<Language> supportedLanguages;
+    private final Language nativeLanguage;
     private final String originalName;
     private final List<NameTranslation> translations;
 
-    public NameTranslations(String originalName, Language nativeLanguage) {
-        this.nativeLanguage = nativeLanguage;
+    public NameTranslations(String originalName, String nativeLanguage_code, List<Language> supportedLanguages) {
+        this.supportedLanguages = supportedLanguages;
+
+        Language tempLanguage = NameTranslations.getLangFromCode(nativeLanguage_code, supportedLanguages);
+        this.nativeLanguage = (tempLanguage != null) ? tempLanguage : this.getLangFromCode("en", supportedLanguages);
+
         this.originalName = originalName;
         this.translations = new ArrayList<NameTranslation>();
         this.createTranslations();
@@ -49,5 +53,12 @@ public class NameTranslations {
 
     void createTranslations() {
         this.translations.add(new NameTranslation(nativeLanguage, originalName));
+    }
+
+    public static Language getLangFromCode(String lang_code, List<Language> supportedLanguages) {
+        return supportedLanguages.stream()
+            .filter(language -> lang_code.equals(language.getCode()))
+            .findAny()
+            .orElse(null);
     }
 }
