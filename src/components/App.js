@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Style.css';
+import Navbar from './Navbar'
 
 export default class App extends Component {
 	constructor(props) {
@@ -36,7 +37,9 @@ export default class App extends Component {
 
 	render() {
 		return (
+
 			<div className="App">
+        <Navbar/>
 				<header className="App-header">
 
 					<form onSubmit={this.handleSubmit}>
