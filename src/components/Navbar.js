@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
-
+import WycliffeLogo from '../img/Wycliffe_Logo.png';
 class Navbar extends Component {
 
   render() {
     return (
-      <div className="navbar" style={myStyles}>
-      <ul style={ulStyles}>
-        <li style={navStyles}><a href="https://www.wycliffe.org/get-involved" style={aStyles}>Get Involved</a></li>  
-        <li style={navStyles}><a href="https://www.wycliffe.org/blog" style={aStyles}>Blog</a></li>
-        <li style={navStyles}><a href="https://www.wycliffe.org/about" style={aStyles}>About</a></li>
-        <li style={navStyles}><a href="https://www.wycliffe.org/resources" style={aStyles}>Resources</a></li>
-        <li style={navStyles}><a href="https://www.wycliffe.org/missionaries" style={aStyles}>Missionaries</a></li>
-        <li style={navStyles}><a href="https://www.wycliffe.org/donate" style={aStyles}>Donate</a></li>           
-      </ul>
+      <div className="navbar" style={myStyles}> 
+      <img src={WycliffeLogo} style={imgStyles}/>
       </div>
     );
   }
@@ -44,6 +37,12 @@ const navStyles = {
   //fontFamily: "Gotham SSm A", "Gotham SSm B", "Verdana", "sans-serif";
  }
 
+const imgStyles = {
+  height: "45px", 
+  paddingTop: "20px",
+  paddingLeft: "20px",
+  position: "inline"
+}
 
 export default Navbar;
 
