@@ -1,7 +1,6 @@
 package server;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import com.google.cloud.translate.*;
 
 public class NameTranslations {
@@ -14,8 +13,12 @@ public class NameTranslations {
             this.translation = translation;
         }
 
-        public String getLanguage() {
+        public String getLanguageCode() {
             return language.getCode();
+        }
+
+        public String getLanguageName() {
+            return language.getName();
         }
 
         public String getTranslation() {
@@ -53,16 +56,27 @@ public class NameTranslations {
         return translations;
     }
 
-    void createTranslations() {
-        this.translations.add(new NameTranslation(nativeLanguage, originalName));
+    public int getSize() {
+        return supportedLanguages.size();
+    }
 
-        for (int i = 0; i < 12; i++) {
-            Language targetLanguage = this.supportedLanguages.get(i);
+    void createTranslations() {
+        // this.translations.add(new NameTranslation(nativeLanguage, originalName));
+
+        Set<String> seenNames = new HashSet<String>();
+        seenNames.add(originalName);
+
+        for (Language targetLanguage : supportedLanguages) {
+            if (targetLanguage.getCode().equals(nativeLanguage.getCode())) {continue;}
             Translation translation = translate.translate(originalName,
                 Translate.TranslateOption.sourceLanguage(nativeLanguage.getCode()),
                 Translate.TranslateOption.targetLanguage(targetLanguage.getCode()));
 
-            this.translations.add(new NameTranslation(targetLanguage, translation.getTranslatedText()));
+            String newName = translation.getTranslatedText();
+            if (!seenNames.contains(newName)) {
+                this.translations.add(new NameTranslation(targetLanguage, newName));
+                seenNames.add(newName);
+            }
         }
     }
 
