@@ -40,7 +40,13 @@ export default class App extends Component {
 				<header className="App-header">
 
 					<form onSubmit={this.handleSubmit}>
-						<div ClassName="submit">
+						<div ClassName="submitContainer" style={{
+							display: 'flex',
+							flexDirection: 'column',
+							justifyContent: 'space-between',
+							alignItems: 'center',
+							height: '90vh'
+						}}>
 						<div Classname="header"><h1>Wycliffe</h1></div>
 						<div Classname="name-input">
 							<label>
