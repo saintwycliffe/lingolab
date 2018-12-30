@@ -23,7 +23,6 @@ public class NameTranslationsController {
       System.out.println(e);
     }
     finally {
-      this.API_KEY = tempApiKey;
       this.translate = (tempTranslate != null) ? tempTranslate : TranslateOptions.newBuilder().build().getService();
     }
   }
