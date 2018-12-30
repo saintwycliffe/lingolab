@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Style.css';
+import Translation from "./Translation"
 
 export default class App extends Component {
 	constructor(props) {
@@ -19,7 +20,7 @@ export default class App extends Component {
 
 		event.preventDefault();
 
-		console.log("/translate?name=\"" + this.state.inputValue + "\"&lang=\"" + "en" + "\"");
+		console.log("https://localhost:8080/translate?name=\"" + this.state.inputValue + "\"&lang=\"" + "en" + "\"");
 
 		fetch("/translate?name=\"" + this.state.inputValue + "\"&lang=\"" + "en" + "\"").then(function (response) {
 			return response.text();
@@ -31,7 +32,6 @@ export default class App extends Component {
 
 	updateInputValue(event) {
 		this.setState({inputValue: event.target.value});
-
 	}
 
 	render() {
@@ -57,6 +57,8 @@ export default class App extends Component {
 						<input type="submit" value="Submit"/>
 						</div>
 					</form>
+
+					<Translation translations={this.state.apiResponse.translations}/>
 
 				</header>
 			</div>
