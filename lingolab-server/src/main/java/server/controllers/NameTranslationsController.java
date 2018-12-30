@@ -42,6 +42,7 @@ public class NameTranslationsController {
     return prop.getProperty("apikey");
   }
 
+  @CrossOrigin
   @RequestMapping("/translate")
   public NameTranslations translate(@RequestParam(value="name") String name, @RequestParam(value="lang") String lang_code) {
     return new NameTranslations(name, lang_code, this.translate);
