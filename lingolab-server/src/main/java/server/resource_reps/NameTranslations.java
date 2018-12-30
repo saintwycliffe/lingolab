@@ -2,7 +2,7 @@ package server;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.google.cloud.translate.Language;
+import com.google.cloud.translate.*;
 
 public class NameTranslations {
     private class NameTranslation {
@@ -23,16 +23,18 @@ public class NameTranslations {
         }
     }
 
+    private final Translate translate;
     private final List<Language> supportedLanguages;
     private final Language nativeLanguage;
     private final String originalName;
     private final List<NameTranslation> translations;
 
-    public NameTranslations(String originalName, String nativeLanguage_code, List<Language> supportedLanguages) {
-        this.supportedLanguages = supportedLanguages;
+    public NameTranslations(String originalName, String nativeLanguage_code, Translate translate) {
+        this.translate = translate;
+        this.supportedLanguages = translate.listSupportedLanguages();
 
-        Language tempLanguage = NameTranslations.getLangFromCode(nativeLanguage_code, supportedLanguages);
-        this.nativeLanguage = (tempLanguage != null) ? tempLanguage : this.getLangFromCode("en", supportedLanguages);
+        Language tempLanguage = NameTranslations.getLangFromCode(nativeLanguage_code, this.supportedLanguages);
+        this.nativeLanguage = (tempLanguage != null) ? tempLanguage : this.getLangFromCode("en", this.supportedLanguages);
 
         this.originalName = originalName;
         this.translations = new ArrayList<NameTranslation>();
@@ -53,6 +55,15 @@ public class NameTranslations {
 
     void createTranslations() {
         this.translations.add(new NameTranslation(nativeLanguage, originalName));
+
+        for (int i = 0; i < 12; i++) {
+            Language targetLanguage = this.supportedLanguages.get(i);
+            Translation translation = translate.translate(originalName,
+                Translate.TranslateOption.sourceLanguage(nativeLanguage.getCode()),
+                Translate.TranslateOption.targetLanguage(targetLanguage.getCode()));
+
+            this.translations.add(new NameTranslation(targetLanguage, translation.getTranslatedText()));
+        }
     }
 
     public static Language getLangFromCode(String lang_code, List<Language> supportedLanguages) {
