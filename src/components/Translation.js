@@ -11,10 +11,12 @@ export default class App extends Component {
 			<div style={style}>
 				{this.props.translations.map((translation) => {
 					return (
-						<div>
-							<strong>{translation.translation.substring(1, translation.translation.length - 2)}</strong>
-							<i>{translation.language.substring(1, translation.translation.length - 2)}</i>
-						</div>
+						<span>
+							{translation.translation}
+							<br></br>
+							<small>{translation.languageName}</small>
+							<br></br>
+						</span>
 					);
 				})}
 			</div>
@@ -23,5 +25,5 @@ export default class App extends Component {
 }
 
 const style = {
-		border: '4px solid'
+		width: '50%'
 };
